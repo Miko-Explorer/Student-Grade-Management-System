@@ -1,0 +1,7 @@
+# CRITICAL: Hide your database password
+.streamlit/secrets.toml
+secrets.toml
+
+# Python cache
+__pycache__/
+*.pyc
