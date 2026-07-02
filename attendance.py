@@ -1,13 +1,9 @@
-import streamlit as st
 from datetime import date
-
 from database import query
 from components import page_head, crud
 
-
 def page_attendance():
     page_head("Attendance", "Manage student attendance records")
-
     ens = query(
         """SELECT e.enrollment_id,
                   CONCAT(s.first_name,' ',s.last_name) AS student,
