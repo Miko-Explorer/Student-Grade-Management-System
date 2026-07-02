@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
 from datetime import date
-
 from database import query
-
 
 def inject_css():
     st.markdown("""<style>
@@ -224,10 +222,8 @@ def inject_css():
     .stMarkdown, .stMarkdown p, .stMarkdown span, .stMarkdown li { color: #c0c0c0 !important; }
     </style>""", unsafe_allow_html=True)
 
-
 def hr():
     st.markdown('<div class="hr"></div>', unsafe_allow_html=True)
-
 
 def stat_card(val, lbl):
     st.markdown(
@@ -235,15 +231,12 @@ def stat_card(val, lbl):
         unsafe_allow_html=True,
     )
 
-
 def sec_title(t):
     st.markdown(f'<div class="sec-title">{t}</div>', unsafe_allow_html=True)
-
 
 def page_head(title, sub):
     st.markdown(f'<p class="pg-title">{title}</p><p class="pg-sub">{sub}</p>', unsafe_allow_html=True)
     hr()
-
 
 def logo():
     st.markdown(
@@ -263,7 +256,6 @@ def logo():
         unsafe_allow_html=True,
     )
     hr()
-
 
 def crud(table, cols, headers, pk, pk_range, fields, search_cols,
          select_label_fn=None):
