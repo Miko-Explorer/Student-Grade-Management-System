@@ -1,9 +1,6 @@
-import streamlit as st
 from datetime import date
-
 from database import query
 from components import page_head, crud
-
 
 def page_grades():
     page_head("Grades", "Manage student grade records")
