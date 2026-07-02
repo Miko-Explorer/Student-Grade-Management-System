@@ -2,7 +2,6 @@ import streamlit as st
 import mysql.connector
 from mysql.connector import Error
 
-
 def get_connection():
     try:
         return mysql.connector.connect(
@@ -18,7 +17,6 @@ def get_connection():
     except Error as e:
         st.error(f"Database connection failed: {e}")
         return None
-
 
 def query(sql, params=None, fetch=True):
     conn = get_connection()
