@@ -1,9 +1,6 @@
-import streamlit as st
 from datetime import date
-
 from database import query
 from components import page_head, crud
-
 
 def page_enrollments():
     page_head("Enrollments", "Manage student course enrollments")
