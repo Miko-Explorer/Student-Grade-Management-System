@@ -6,11 +6,15 @@ from mysql.connector import Error
 def get_connection():
     try:
         return mysql.connector.connect(
-            host=st.secrets.get("db_host", "localhost"),
-            user=st.secrets.get("db_user", "root"),
-            password=st.secrets.get("db_password", "miko1605"),
-            database=st.secrets.get("db_name", "student_db"),
+            host=st.secrets["mysql"]["host"],
+            user=st.secrets["mysql"]["user"],
+            password=st.secrets["mysql"]["password"],
+            database=st.secrets["mysql"]["database"],
+            port=st.secrets["mysql"].get("port", 3306)
         )
+    except KeyError as e:
+        st.error(f"Missing MySQL configuration in secrets.toml: {e}")
+        return None
     except Error as e:
         st.error(f"Database connection failed: {e}")
         return None
